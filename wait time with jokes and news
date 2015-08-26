@@ -1,0 +1,29 @@
+__author__ = 'deepthi'
+import time
+import random
+import feedparser
+
+class entertainment():
+
+    def jokes1(self):
+        a = {"How can you get four suits for a dollar?":"Buy a deck of cards","How do dinosaurs pay their bills?":"With Tyrannosaurus checks","What do you call a dinosaur that smashes everything in its path?":"Tyrannosaurus wrecks","do you call a dinosaur that wears a cowboy hat and boots?":"Tyrannosaurus Tex","How do you make a hot dog stand?":"Steal its chair","How do you make an egg laugh?":"Tell it a yolk","How do you prevent a Summer cold?" :"Catch it in the Winter!","How does a pig go to hospital?":"In a hambulance","What bird can lift the most?":"A crane"}
+        i = random.randint(0, len(a) - 1)
+        print list(a)[i]
+        time.sleep(2)
+        return a[list(a)[i]]
+
+    def news(self):
+        a1 = []
+        url = "http://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+        url1 = "http://feeds.feedburner.com/NdtvNews-TopStories"
+        d = feedparser.parse(url1)
+        i = random.randint(0, len(d.entries) - 1)
+        print d.entries[i].title
+        #for item in d.entries:
+            #print item.title
+
+
+
+a = entertainment()
+print a.jokes1()
+print a.news()
