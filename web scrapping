@@ -1,0 +1,13 @@
+__author__ = 'deepthi'
+
+from bs4 import BeautifulSoup
+import urllib2
+from urllib2 import urlopen
+import random
+
+BASE_URL = "http://timesofindia.indiatimes.com/home/headlines"
+soup = BeautifulSoup(urllib2.urlopen("http://timesofindia.indiatimes.com/home/headlines").read(),"lxml")
+boccat = soup.find("ul","content")
+category_links = [li.a for li in boccat.findAll("li")]
+j= random.randint(0, len(category_links) - 1)
+print category_links[j]
